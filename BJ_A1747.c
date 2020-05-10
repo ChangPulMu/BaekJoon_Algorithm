@@ -3,6 +3,7 @@
 어떤 수 N (1 ≤ N ≤ 1,000,000)이 주어졌을 때, N보다 크거나 같고, 소수이면서 팰린드롬인 수 중에서, 가장 작은 수를 구하는 프로그램을 작성하시오.*/
 
 #include <stdio.h>
+<<<<<<< HEAD
 int Ten(int a){
 	if(a==1)
 		return 1;
@@ -44,5 +45,44 @@ int main(void){
 		correct = 0;
 	}
 
+=======
+#include <stdlib.h>
+#include <string.h>
+
+int main(void){
+	char num[8];
+	
+	int ans, correct=0,i;
+
+	scanf("%s", num);
+
+	while(1){
+		
+		for(int m=0;m<strlen(num)/2;m++)
+			
+			if(num[m]==num[strlen(num)-1-m])
+				correct++;
+		
+		ans = atoi(num);
+
+		if(correct==strlen(num)/2){
+		
+			for(i=2;i<ans;i++)
+				if(ans%i==0)
+					break;
+		
+			if(ans==i){
+				printf("%d", ans);
+				break;
+			}
+		}
+	
+		ans++;
+
+		correct = 0;
+	
+		sprintf(num,"%d",ans);
+	}
+>>>>>>> BaekJoon_Algorithm_Linux/master
 	return 0;
 }
